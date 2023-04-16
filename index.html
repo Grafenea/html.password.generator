@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Generate password from text</title>
+  </head>
+  <body>
+    <h1>Generate password from text (Text > Base64 > Sha-256 > Base64)</h1>
+    <p>For your safety, use at least 4 input words!</p>
+    <input id="text-input" type="text" placeholder="Enter text here">
+    <button id="convert-button" onclick="convertText()">Convert</button>
+    <p id="output"></p>
+    <script>
+      function convertText() {
+        // Get the input text
+        const inputText = document.getElementById('text-input').value;
+
+        // Convert the text to base64
+        const base64Text = btoa(inputText);
+
+        // Use sha-256 on the base64 text
+        const sha256Text = CryptoJS.SHA256(base64Text);
+
+        // Convert the sha-256 hash to base64
+        const finalText = btoa(sha256Text);
+
+        // Display the result
+        document.getElementById('output').innerHTML = finalText;
+      }
+    </script>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
