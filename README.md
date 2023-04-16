@@ -1,2 +1,8 @@
-# html-password-generator
-A project that uses simple words to generate passwords
+# Gerador de senhas por html
+Um projeto que usa palavras simples para gerar senhas seguras.
+
+# Como funciona?
+Ao digitar as palavras, o texto de entrada(input) é transformado em Base64, e depois é tirado o hash desse texto usando o algoritmo Sha-256, após isso, o hash é codificado em Base64, e o resultado pode ser usado como senha.
+
+# Por que eu deveria usar isso?
+Com ele, você tem a vantagem de poder se lembrar da senha, pois seriam palavras simples, e ainda ter uma senha forte de 88 caracteres.
